@@ -16,6 +16,9 @@ Route::group(['middleware' => ['get.menu']], function () {
 
     Route::get('/form-keluhan', function () {           return view('dashboard.pasien.pasienForm'); });
 
+    // Route::resource('/dashboard-perawat', function () {           return view('dashboard.perawat.index'); });
+    Route::resource('/dashboard-perawat',  NursesController::class);
+
     Route::group(['middleware' => ['role:user']], function () {
         Route::get('/colors', function () {     return view('dashboard.colors'); });
         Route::get('/typography', function () { return view('dashboard.typography'); });
