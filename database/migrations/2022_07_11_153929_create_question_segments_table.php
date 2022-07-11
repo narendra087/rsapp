@@ -15,7 +15,7 @@ class CreateQuestionSegmentsTable extends Migration
     {
         Schema::create('question_segments', function (Blueprint $table) {
             $table->unsignedBigInteger('form_id');
-
+            $table->bigIncrements('question_segment_id');
             $table->string('question_segment');
             $table->string('question_segment_desc');
             $table->string('question_segment_status');
