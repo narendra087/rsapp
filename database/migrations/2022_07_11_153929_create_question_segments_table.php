@@ -14,7 +14,17 @@ class CreateQuestionSegmentsTable extends Migration
     public function up()
     {
         Schema::create('question_segments', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('form_id');
+
+            $table->string('question_segment');
+            $table->string('question_segment_desc');
+            $table->string('question_segment_status');
+            $table->index('question_segment_id');
+            $table->foreign('form_id')
+                ->references('form_id')
+                ->on('forms_table')
+                ->onDelete('cascade');
+            $table->primary(['form_id','question_segment_id']);
             $table->timestamps();
         });
     }
