@@ -19,7 +19,7 @@ class CreateQuestionSegmentsTable extends Migration
             $table->string('question_segment');
             $table->string('question_segment_desc');
             $table->string('question_segment_status');
-            $table->index('question_segment_id');
+            //$table->index('form_id');
             $table->foreign('form_id')
                 ->references('form_id')
                 ->on('forms_table')
