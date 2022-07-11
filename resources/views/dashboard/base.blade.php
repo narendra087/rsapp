@@ -40,6 +40,8 @@
     <!-- Main styles for this application-->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     @yield('css')
 
     <!-- Global site tag (gtag.js) - Google Analytics-->
@@ -73,7 +75,7 @@
 
         <main class="c-main">
 
-          @yield('content') 
+          @yield('content')
 
         </main>
         @include('dashboard.shared.footer')
